@@ -44,45 +44,96 @@ module Messenger
                                       :id,
                                       :time,
                                       messaging: [
-                                        { sender: :id },
-                                        :timestamp,
-                                        { recipient: :id },
-                                        message:
-                                          [
-                                            :mid,
-                                            :seq,
-                                            { sticker: :id },
-                                            :text,
-                                            { attachments: [
-                                              :type,
-                                              :url,
-                                              :title,
-                                              payload: [
-                                                :url,
-                                                coordinates: [
-                                                :lat, :long
-                                              ] ]
-                                            ] },
-                                            { quick_reply: :payload },
-                                            :is_echo,
-                                            { app: :id },
-                                            :metadata
+                                          { sender: :id },
+                                          :timestamp,
+                                          { recipient: :id },
+                                          message:
+                                              [
+                                                  :is_echo,
+                                                  :app_id,
+                                                  :mid,
+                                                  :seq,
+                                                  { sticker: :id },
+                                                  :text,
+                                                  { attachments: [
+                                                      :type,
+                                                      :url,
+                                                      :title,
+                                                      payload: [
+                                                          :url,
+                                                          coordinates: [
+                                                              :lat, :long
+                                                          ] ]
+                                                  ] },
+                                                  { quick_reply: :payload },
+                                                  :is_echo,
+                                                  { app: :id },
+                                                  :metadata
+                                              ],
+                                          read: [
+                                              :watermark,
+                                              :seq
                                           ],
-                                        read: [
-                                          :watermark,
-                                          :seq
-                                        ],
-                                        postback: :payload,
-                                        optin: :ref,
-                                        delivery: [
-                                          { mids: [] },
-                                          :watermark,
-                                          :seq
-                                        ],
-                                        account_linking: [
-                                          :status, :authorization_code
-                                        ]
-                                      ]])
+                                          postback: :payload,
+                                          optin: :ref,
+                                          delivery: [
+                                              { mids: [] },
+                                              :watermark,
+                                              :seq
+                                          ],
+                                          account_linking: [
+                                              :status, :authorization_code
+                                          ]
+                                      ]],
+                                  messenger: [
+                                      :object,
+                                      entry: [
+                                          :id,
+                                          :time,
+                                          messaging: [
+                                              { sender: :id },
+                                              :timestamp,
+                                              { recipient: :id },
+                                              message:
+                                                  [
+                                                      :is_echo,
+                                                      :app_id,
+                                                      :mid,
+                                                      :seq,
+                                                      { sticker: :id },
+                                                      :text,
+                                                      { attachments: [
+                                                          :type,
+                                                          :url,
+                                                          :title,
+                                                          payload: [
+                                                              :url,
+                                                              coordinates: [
+                                                                  :lat, :long
+                                                              ] ]
+                                                      ] },
+                                                      { quick_reply: :payload },
+                                                      :is_echo,
+                                                      { app: :id },
+                                                      :metadata
+                                                  ],
+                                              read: [
+                                                  :watermark,
+                                                  :seq
+                                              ],
+                                              postback: :payload,
+                                              optin: :ref,
+                                              delivery: [
+                                                  { mids: [] },
+                                                  :watermark,
+                                                  :seq
+                                              ],
+                                              account_linking: [
+                                                  :status, :authorization_code
+                                              ]
+                                          ]]
+                                  ]
+      )
       Params.new(safe_params)
     end
   end
