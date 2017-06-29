@@ -60,10 +60,25 @@ module Messenger
                                                       :url,
                                                       :title,
                                                       payload: [
+                                                          :template_type,
+                                                          :sharable,
                                                           :url,
                                                           coordinates: [
                                                               :lat, :long
-                                                          ] ]
+                                                          ],
+                                                          elements:[
+                                                              :title,
+                                                              :image_url,
+                                                              :subtitle,
+                                                              buttons: [
+                                                                  :type,
+                                                                  :title,
+                                                                  :payload,
+                                                                  :url
+                                                              ]
+
+                                                          ]
+                                                      ]
                                                   ] },
                                                   { quick_reply: :payload },
                                                   :is_echo,
@@ -107,10 +122,25 @@ module Messenger
                                                           :url,
                                                           :title,
                                                           payload: [
+                                                              :template_type,
+                                                              :sharable,
                                                               :url,
                                                               coordinates: [
                                                                   :lat, :long
-                                                              ] ]
+                                                              ],
+                                                              elements:[
+                                                                  :title,
+                                                                  :image_url,
+                                                                  :subtitle,
+                                                                  buttons: [
+                                                                      :type,
+                                                                      :title,
+                                                                      :payload,
+                                                                      :url
+                                                                  ]
+
+                                                              ]
+                                                          ]
                                                       ] },
                                                       { quick_reply: :payload },
                                                       :is_echo,
