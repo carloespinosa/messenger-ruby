@@ -50,6 +50,7 @@ require "messenger/components/elements/receipt/summary"
 
 require "messenger/components/templates/buttons"
 require "messenger/components/templates/generic"
+require "messenger/components/templates/list"
 require "messenger/components/templates/receipt"
 require "messenger/components/templates/quick_replies"
 
