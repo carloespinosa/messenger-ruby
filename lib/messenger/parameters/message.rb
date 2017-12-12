@@ -5,7 +5,7 @@ module Messenger
 
       attr_accessor :mid, :seq, :sticker_id, :text, :attachments, :quick_reply, :is_echo, :app_id, :metadata
 
-      def initialize(mid:, seq:, sticker_id: nil, text: nil, attachments: nil, quick_reply: nil, is_echo: nil, app_id: nil, metadata: nil)
+      def initialize(mid:, seq:, sticker_id: nil, text: nil, nlp: nil, tags: nil, attachments: nil, quick_reply: nil, is_echo: nil, app_id: nil, metadata: nil)
         @mid         = mid
         @seq         = seq
         @sticker_id  = sticker_id if sticker_id.present?
@@ -15,6 +15,8 @@ module Messenger
         @is_echo     = is_echo
         @app_id      = app_id
         @metadata    = metadata
+        @nlp         = nlp
+        @tags        = tags
       end
 
       def build_attachments(attachments)
